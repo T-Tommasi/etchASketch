@@ -1,7 +1,7 @@
 //Global variables used in the project
 const CONTAINER = document.querySelector('.grid');
-let times = prompt('How many squares per side?', '16')
-let flex_basis = 100/times
+let times = prompt('How many squares per side?', '16');
+let flex_basis = 100/times;
 
 
 //Set up a 16*16 grid with the tiles

@@ -17,6 +17,7 @@ body {
 .container {
     border: 1px black solid;
     margin: 1vh;
+    padding: 4vh;
 }
 
 .container, .grid {

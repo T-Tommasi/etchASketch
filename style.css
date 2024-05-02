@@ -47,12 +47,12 @@ body {
 .grid {
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 4vh;
     min-height: 0;
     height: 85vh;
     width: 85vh;
     aspect-ratio: 1/1;
     border-left: 1px dashed black;
+    background-color: black;
 }
 
 .tile {

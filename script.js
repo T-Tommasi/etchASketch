@@ -1,6 +1,6 @@
 //Global variables used in the project
 const CONTAINER = document.querySelector('.grid');
-const RESET_BUTTON = document.querySelector('#reset');
+const SET_BLACK = document.querySelector('#black');
 const SET_RAINBOW = document.querySelector('#rainbow');
 
 //set a function for determining the number of squares
@@ -13,6 +13,7 @@ function createGridBlack (times) {
         let grid_tile = document.createElement('div');
         grid_tile.setAttribute('class','tile');
         grid_tile.style.flexBasis = `${flex_basis}%`;
+        grid_tile.style.backgroundColor = `white`;
         CONTAINER.appendChild(grid_tile);
         grid_tile.addEventListener('mousedown', function () {
             grid_tile.style.background = 'black';
@@ -27,12 +28,25 @@ function createGridRainbow (times) {
         let grid_tile = document.createElement('div');
         grid_tile.setAttribute('class','tile');
         grid_tile.style.flexBasis = `${flex_basis}%`;
+        grid_tile.style.opacity = `1`;
+        grid_tile.style.backgroundColor = `white`;
         CONTAINER.appendChild(grid_tile);
         grid_tile.addEventListener('mousedown', function () {
             let colors = ['green', 'red', 'purple', 'blue', 'orange', 'pink', 'yellow'];
-            grid_tile.style.background = colors[Math.floor(Math.random()*colors.length)];
-        })
+            let opacity = parseFloat(grid_tile.style.opacity) || 0;
+            if (!grid_tile.style.background) {
+                grid_tile.style.background = colors[Math.floor(Math.random()*colors.length)];
+            }
+            if (opacity > 0) {
+                grid_tile.style.opacity = opacity - 0.1;
+                };
+            })
+        }
     }
+
+//Function that gradually darkens the background color if the same tile is clicked multiple times
+function darkenColors () {
+
 }
 
 //Function that transform the squares background to black if hovered
@@ -48,7 +62,7 @@ createGridBlack(squaresPerSide())
 
 //Set up event listeners for the various buttons
 //RESET button should reset the grill to the specified square size
-RESET_BUTTON.addEventListener('click', function () {
+SET_BLACK.addEventListener('click', function () {
     CONTAINER.innerHTML = '';
     createGridBlack(squaresPerSide());
 })

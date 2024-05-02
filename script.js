@@ -44,13 +44,7 @@ function createGridRainbow (times) {
         }
     }
 
-//Function that gradually darkens the background color if the same tile is clicked multiple times
-function darkenColors () {
-
-}
-
 //Function that transform the squares background to black if hovered
-
 function blackSquare (squareTile) {
     squareTile.addEventListener('click', function () {
         squareTile.style.background = 'black'

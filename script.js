@@ -4,7 +4,7 @@ const SET_BLACK = document.querySelector('#black');
 const SET_RAINBOW = document.querySelector('#rainbow');
 
 //set a function for determining the number of squares
-let squaresPerSide = () => prompt('How many suqares per side?', '16')
+let squaresPerSide = () => prompt('How many squares per side?', '16')
 
 //Set up a 16*16 grid with the tiles using a black coloring
 function createGridBlack (times) {

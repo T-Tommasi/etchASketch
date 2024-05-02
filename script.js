@@ -52,7 +52,7 @@ function blackSquare (squareTile) {
 }
 
 //Initial function for populating the page
-createGridBlack(squaresPerSide())
+createGridBlack(8)
 
 //Set up event listeners for the various buttons
 //RESET button should reset the grill to the specified square size
